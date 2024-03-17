@@ -32,6 +32,7 @@ root.render(
 ```
 => App.js (src)
 Esse é o componente principal da aplicação, onde vamos escrever a lógica do nosso projeto.
+
 ---
 
 **CRIANDO O COMPONENTE BANNER** <br>
