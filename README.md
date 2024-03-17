@@ -3,12 +3,12 @@ O Organo foi um projeto do curso "React: desenvolvendo com JavaScript" da Alura 
 
 ## 💻Documentando o conhecimento
 
-**O QUE É E ONDE SURGIU O REACT**
+**O QUE É E ONDE SURGIU O REACT** <br>
 O React surgiu em 2011 e foi criado por engenheiros de software do Facebook. A primeira implementação do React foi na timeline do próprio Facebook no mesmo ano.
 
 Em resumo o React é uma biblioteca reativa, baseada em componentes para criar interfaces de usuário. A maior vantagem do react, e o motivo pelo qual ele foi criado, é que ele reage aos eventos e mudanças de estado, interagindo com outros componentes e atualizando o que for necessário, tudo isso em uma única página.
 
-**CRIAÇÃO E ORGANIZAÇÃO DO PROJETO**
+**CRIAÇÃO E ORGANIZAÇÃO DO PROJETO** <br>
 1) Antes de começar precisamos instalar o node.js, ele que vai criar nosso ambiente de execução e gerenciar nossos pacotes, através dos comandos npm (locais) e npx (remotos)
 2) Para criar o projeto base usamos o comando `npm create react app`
 3) Com o projeto criado podemos iniciar o servidor `npm start`
@@ -29,13 +29,12 @@ root.render(
   </React.StrictMode>
 );
 ```
-* React.StrictMode é um recurso para ser usado no desenvolvimento, ele tem muitas vantagens uma das melhores são as mensagens de erro amigáveis.
-
-=> App.js (src)
+* React.StrictMode é um recurso para ser usado no desenvolvimento, ele tem muitas vantagens uma das melhores são as mensagens de erro amigáveis. <br>
+=> app.js (src)
 Esse é o componente principal da aplicação, onde vamos escrever a lógica do nosso projeto.
 ---
 
-**CRIANDO O COMPONENTE BANNER**
+**CRIANDO O COMPONENTE BANNER** <br>
 Chegou o momento de criar nosso primeiro componente, mas antes vamos aprender um pouco de boas práticas na organização das pastas.
 
 ---
@@ -84,7 +83,7 @@ function Banner() {
 export default Banner
 ```
 
-**COMPONENTE CAMPOTEXTO E AS PROPS**
+**COMPONENTE CAMPOTEXTO E AS PROPS** <br>
 1) A organização desse componente é igual ao anterior, uma pasta `CampoTexto` e dois arquivos `index.js` e `CampoTexto.css` 
 
 2) Dessa vez vamos usar const e arrow function para criar o componente
@@ -114,7 +113,7 @@ const CampoTexto = (props) => {
 6) Voltando ao App.js onde chamamos nossa tag de CampoTexto vamos criar essas props
 `<CampoTexto label="Nome" placeholder="Digite seu nome"/>`
 
-**COMPONENTE FORMULARIO**
+**COMPONENTE FORMULARIO** <br>
 Vamos criar mais um componente, ele será intitulado Formulario e o objetivo dele é receber os componentes que irão compor nosso formulário, no caso só temos o CampoTexto, mas precisamos chamar esse componente três vezes.
 
 A criação desse componente segue o padrão que já foi mostrado.
@@ -132,7 +131,7 @@ Com o componente criado vamos remover o CampoTexto do App.js e adicionar no Form
 </section>
 ```
 
-**COMPONENTE LISTASUSPENSA E O MÉTODO MAP**
+**COMPONENTE LISTASUSPENSA E O MÉTODO MAP** <br>
 1) Vamos criar mais um componente, esse terá o nome de ListaSuspensa.
 2) ListaSuspensa é um select que lista os times, para isso vamos usar o método map, que recebe um array para ser alterado e então exibido.
 ```
@@ -158,14 +157,14 @@ const times = [
 ]
 ```
 
-**COMPONENTE BOTAO E A PROPS.CHILDREN**
+**COMPONENTE BOTAO E A PROPS.CHILDREN** <br>
 1) Criação padrão de componente
 2) Adicionar o Botao no Formulario, aqui vai a primeira diferença desse componente, pois vamos abrir a tag e escrever o conteúdo dentro dela
 `<Botao>Criar card</Botao>`
 3) E dentro do componente Botao vamos receber as informações através do `props.children`, que são os filhos do componente, ou seja, qualquer coisa que foi adicionada dentro da tag e não nas propriedades da tag.
 
 
-**AJUSTANDO O FORMULARIO**
+**AJUSTANDO O FORMULARIO** <br>
 Agora que temos um botão no formulário vamos endenter o funcionamento dele. Todo botão sem tipo definido dentro de um formulário por padrão é um submit, sendo assim ele vai dar um post na mesma página passando as informações pela url. A principal diferença entre escutar o click ou o submit de um formulário é que no submit o navegador faz uma validação padrão usando as próprias propriedades dos campos, já no click seria preciso fazer isso na mão.
 
 Com isso em mente vamos adicionar um escutador na tag do form `<form onSubmit={aoSalvar}>` juntamente com a função que será executada.
@@ -180,7 +179,7 @@ const aoSalvar = (evento) => {
 Outra coisa que também podemos fazer é criar parâmetros para personalisar as propriedades dos campos, aqui vamos usar as props para dizer que o campo é ou não obrigatório(required) passando o parâmetro `obrigatorio={true}` e recebendo no campo `required={props.obrigatorio}` 
 
 
-**APRENDENDO SOBRE USESTATE**
+**APRENDENDO SOBRE USESTATE** <br>
 * Para receber os campos do formulário precisamos atribuir o que o usuário está digitando a uma variável, ela também vai controlar o estado do componente. Para isso o React utiliza um hook chamado useState, ele é responsável pela criação de variáveis que irão ajudar a controlar a atualização do componente.
 
 * Para utilizar o useState precisamos importar a classe e usar o seguinte padrão na criação da variável:
@@ -188,7 +187,7 @@ Outra coisa que também podemos fazer é criar parâmetros para personalisar as 
 
  * Os componentes CampoTexto e ListaSuspensa irão receber informações do usuário e essas informações devem ser repassadas para o componente pai que é o Formulario, então para que isso funcione precisamos "elevar o estado do componente" que significa que o useState que o componente filho vai alterar será passado para o pai através das props.
 
- **ELEVAÇÃO DO ESTADO**
+ **ELEVAÇÃO DO ESTADO** <br>
  1) No componente filho vamos pegar duas informações pela props, valor e aoAlterado, onde esse último é uma função que passa o valor digitado pelo usuário para o método set da variável correspondente.
 ```
 const aoDigitado = (evento) => {
@@ -211,7 +210,7 @@ const [time, setTime] = useState('')
 <ListaSuspensa valor={time} aoAlterado={valor => setTime(valor)} ... />
 ```
 
-**CADASTRAR O COLABORADOR**
+**CADASTRAR O COLABORADOR** <br>
 *No App.js*
 1) Criar a variável com useState, do tipo array, que vai receber os colaboradores
 2) Criar a função que adiciona o colaborador no array de colaboradores
@@ -240,7 +239,7 @@ props.aoColaboradorCadastrado({
 ```
 * Para criar esse objeto usamos uma forma abreviada onde se a chave terá o mesmo nome que a variável podemos omitir o nome da váriavel.
 
-**COMPONENTE TIME E CSS INLINE**
+**COMPONENTE TIME E CSS INLINE** <br>
 Para montar a listagem dos times é preciso criar um novo componente.
 1) Criar um componente chamado Time, nele vamos precisar de três informações: nome do time, cor primária e cor secundária, então vamos preparar o código para receber essas propriedades.
 ```
@@ -269,14 +268,14 @@ const times = [{
 {times.map{time => <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSecundaria} />}}
 ```
 
-**REFATORANDO**
+**REFATORANDO** <br>
 Como temos dois componentes precisando usar uma lista de times não é viável, ou melhor, não é manutenível manter a mesma lista em dois lugares diferentes, por isso elevamos o estado do componente Time e agora vamos elevar novamente o estado do componente ListaSuspensa, sendo assim vamos excluir a lista de times de dentro do Formulario e fazer o Formulario receber essa lista pelo App.js
 
 1) Fazer o Formulario receber apenas o nome dos times `<Formulario times={times.map(time => time.nome)} .../>`
 
 2) Onde ListaSuspensa recebia a variável times agora vai receber de props `<ListaSuspensa times={props.times} .../>`
 
-**COMPONENTE COLABORADOR E O MÉTODO FILTER**
+**COMPONENTE COLABORADOR E O MÉTODO FILTER** <br>
 Nesse ponto vamos criar o card do colaborador, ou seja, mostrar as informações que foram coletadas pelo formulário.
 1) Criar o componente Colaborador, ele receberá pela props: nome, cargo, imagem e a cor do card (que ele vai pegar de acordo com o time)
 `const Colaborador = ({ nome, cargo, imagem, corDeFundo }) => {...}`
@@ -289,7 +288,7 @@ Nesse ponto vamos criar o card do colaborador, ou seja, mostrar as informações
 4) Existe um problema, pois o mesmo colaborador aparece em todos os times. Para consertar vamos fazer um pequeno ajuste no ponto 2, na chamada do Time adicionamos um filtro, assim ele só vai passar para o Time os colaboradores que tiverem o mesmo time.
 `<Time colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} .../>`
 
-**RENDERIZAÇÃO CONDICIONAL**
+**RENDERIZAÇÃO CONDICIONAL** <br>
 Aqui vamos arrumar alguns detalhes para deixar o projeto mais funcional: 1º Esconder os times que ainda não tem colaboradores e 2º Resetar os campos do formulário.
 
 Para resolver o primeiro problema vamos voltar ao componente Time, onde teremos usar duas lógicas:
@@ -322,8 +321,8 @@ setImagem('')
 setTime('')
 ```
 
-**COMPONENTE RODAPE**
+**COMPONENTE RODAPE** <br>
 Esse componente encerra o projeto e ele é muito simples, pois só precisamos reproduzir o layout criando o html e css e então adicionar a tag `<Rodape/>` no final do App.js
 
-**CONTEÚDO EXTRA**
+**CONTEÚDO EXTRA** <br>
 Uma forma de debugar a aplicação através do navegador é adicionar a palavra `debugger` ao código, no ponto que deseja analisar, assim quando você rodar a aplicação no chrome com a ferramenta do desenvolvedor aberta, a execução será pausada e uma nova aba de opções surgirá para ajudar na analise do código.  
