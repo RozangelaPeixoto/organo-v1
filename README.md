@@ -1,11 +1,7 @@
 # Organo - Descrição do Projeto
-O Organo foi um projeto do curso "React: desenvolvendo com JavaScript" da Alura que visa criar um ambiente para organizar as pessoas de acordo com as escolas de tecnologia em que elas trabalham, [aqui está o layout do projeto](https://github.com/RozangelaPeixoto/organo/assets/140510936/70f26290-dc2b-4808-8d9d-8bf53de0e108). Acompanhei a criação do projeto e ao final modifiquei o mesmo para que ele seja capaz de organizar as pessoas por projetos ainda aproveitando os times e cores do original, assim o Organo poderia não apenas ser usado por escolas de tecnologias, mas por qualquer empresa de tecnologia que queira organizar as equipes de acordo com o projeto em que estão alocadas.
-<div align="center"> 
-  <img src="https://github.com/RozangelaPeixoto/organo/assets/140510936/52ab3200-99ca-4d01-865c-884ca6258cc1" width="500px">
-</div>
+O Organo foi um projeto do curso "React: desenvolvendo com JavaScript" da Alura que visa criar um ambiente para organizar as pessoas de acordo com as escolas de tecnologia em que elas trabalham, [aqui está o layout do projeto](https://github.com/RozangelaPeixoto/organo/assets/140510936/70f26290-dc2b-4808-8d9d-8bf53de0e108). Esse foi meu primeiro projeto em React e fiz uma documentação bem completa sobre o que fiz e as coisas que aprendi durante o curso.
 
 ## 💻Documentando o conhecimento
-Abaixo descrevo um pouco do meu aprendizado:
 
 **O QUE É E ONDE SURGIU O REACT**
 O React surgiu em 2011 e foi criado por engenheiros de software do Facebook. A primeira implementação do React foi na timeline do próprio Facebook no mesmo ano.
@@ -48,11 +44,6 @@ Chegou o momento de criar nosso primeiro componente, mas antes vamos aprender um
 * Já na pasta `src` é onde ficam os arquivos que compoem nossa aplicação e que não são acessíveis pelo usuário. Nela vamos adicionar nossos componentes e páginas. Sendo assim podemos criar a pasta `components` e `pages` para organizar nossa árvore.
 
 * A organização do componente pode ser feitas de algumas formas, nesse projeto vamos criar uma pasta para o componente `Componente` e dentro dela vamos criar dois arquivos, um index.js e um Componenete.css
-
-Uma imagem para ilustrar nossa tree
-<div align="center"> 
-  <img src="https://github.com/RozangelaPeixoto/organo/assets/140510936/a542a2fe-b6ff-47d0-b148-1f669fd614a9" width="200px">
-</div>
 ---
 
 Voltando a criação do componente...
