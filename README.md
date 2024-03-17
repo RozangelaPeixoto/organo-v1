@@ -21,6 +21,7 @@ Esse é o arquivo mostrado ao usuário, nele está a estrutura padrão do html, 
 
 => index.js (src)
 Existem alguns imports nesse arquivo, mas o que deve ser abstraído aqui é que o elemento com o id root está sendo usado para criar a base do projeto e dentro dessa base ele está renderizando o nosso componente principal que é o App.js
+* React.StrictMode é um recurso para ser usado no desenvolvimento, ele tem muitas vantagens uma das melhores são as mensagens de erro amigáveis.
 ```
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,8 +30,7 @@ root.render(
   </React.StrictMode>
 );
 ```
-* React.StrictMode é um recurso para ser usado no desenvolvimento, ele tem muitas vantagens uma das melhores são as mensagens de erro amigáveis. <br>
-=> app.js (src)
+=> App.js (src)
 Esse é o componente principal da aplicação, onde vamos escrever a lógica do nosso projeto.
 ---
 
@@ -96,7 +96,7 @@ export default CampoTexto
 ```
 3) E então adicionar a tag CampoTexto ao App.js e importar o componente
 
-> Props é uma forma reduzida de dizer propriedades. Elas são usadas para passar dados entre componentes.
+*Props é uma forma reduzida de dizer propriedades. Elas são usadas para passar dados entre componentes.
 Inicialmente vamos usar as props para personalizar os componentes, depois vamos ver outros usos.
 4) Primeiro, recebemos as props como parâmetro da função
 5) Depois podemos substituir os locais estáticos pelos valores que vamos receber nas props
